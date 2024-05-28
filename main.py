@@ -1,13 +1,16 @@
 from aiogram import Bot, Dispatcher, types, executor
 from config import TELEGRAM_TOKEN
+from  keyboard.keyboards  import get_keyboard_1, get_keyboard_2
 
 bot = Bot(token= TELEGRAM_TOKEN)
 dp = Dispatcher(bot)
 
+
+
 async  def set_commands(bot: Bot):
     commands = [
         types.BotCommand(command= '/start', description='Команда чтобы начать'),
-        types.BotCommand(command='/help', description='Помощ по командам'),
+        types.BotCommand(command='/help', description='Помощь по командам'),
         types.BotCommand(command='/lis', description='Жмякни'),
         types.BotCommand(command='/viki', description='Определение про лис'),
         types.BotCommand(command='/poroda', description='Бот выдаст разные породы лис')
@@ -18,7 +21,7 @@ async  def set_commands(bot: Bot):
 
 @dp.message_handler(commands= 'start')
 async def cm1(message: types.message):
-    await message.reply('Ку, Я твой эхо бот')
+    await message.reply('Ку, Я твой эхо бот', reply_markup=get_keyboard_1())
 
 @dp.message_handler(commands= 'help')
 async def cm2(message: types.message):
@@ -34,14 +37,36 @@ async def cm4(message: types.message):
 
 @dp.message_handler(commands= 'poroda')
 async def cm5(message: types.message):
-    await message.reply('Бенгальская лисица (Vulpes bengalensis)'
-                        'Афганская лисица (Vulpes cana)'
-                        'Южноафриканская лисица (Vulpes chama)'
-                        'Корсак (Vulpes corsac)'
-                        'Тибетская лисица (Vulpes ferrilata)'
-                        'Песец (Vulpes lagopus)'
-                        'Американская лисица (Vulpes macrotis)'
-                        'Африканская лисица (Vulpes pallida)')
+    await message.reply("Бенгальская лисица (Vulpes bengalensis)"
+    "Афганская лисица (Vulpes cana)"
+    "Южноафриканская лисица (Vulpes chama)"
+    "Корсак (Vulpes corsac)"
+    "Тибетская лисица (Vulpes ferrilata)"
+    "Песец (Vulpes lagopus)"
+    "Американская лисица (Vulpes macrotis)"
+    "Африканская лисица (Vulpes pallida)")
+
+
+
+@dp.message_handler(lambda message: message.text == 'Покажи взрослую лису')
+async def bt_click1(message: types.Message):
+    await bot.send_photo(message.chat.id, photo='https://www.purmuseum.ru/uploads/images/2021/Publikacii2021/LisaKrasnay/Big/%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%81%D0%B0%20(1).jpg', caption='Вот лис который охотится')
+
+@dp.message_handler(lambda message: message.text == 'Перейти на следующую клавиатуру')
+async def bt_click2(message: types.Message):
+    await message.answer('Ты перешёл на следующую клавиатуру',reply_markup=get_keyboard_2())
+
+
+@dp.message_handler(lambda message: message.text == 'Покажи маленького лисёнка')
+async def bt_click3(message: types.Message):
+    await bot.send_photo(message.chat.id, photo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgdfCcBOyR99on817dPFVWklZHqhHYbAJzmnEo70DDFA&s', caption='Вот тебе лисёнок')
+
+@dp.message_handler(lambda message: message.text == 'Вернуться на предыдущую клавиатуру')
+async def bt_click4(message: types.Message):
+    await message.answer('Ты вернулся на предыдущую клавиатуру',reply_markup=get_keyboard_1())
+
+
+
 
 @dp.message_handler()
 async def echo(message: types.message):
