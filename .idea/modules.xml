@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ProstoLis.iml" filepath="$PROJECT_DIR$/.idea/ProstoLis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BotLis.iml" filepath="$PROJECT_DIR$/.idea/BotLis.iml" />
     </modules>
   </component>
 </project>

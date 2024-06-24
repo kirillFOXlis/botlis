@@ -1,0 +1,52 @@
+Информацияо парод через клавитауры(каждая порода)
+Картинкии краткое описание парод
+образ жизни
+где обитают
+
+
+
+
+
+база данных(хз что)
+
+НАПИСАНИЕ КОДА:
+создавать отдельные клаиватуры для работоспособности кнопок
+туда добавлять картинки и текст
+
+
+код подправить сделать красивым
+
+
+
+ПРОВЕРИТЬ И ДОДЕЛАТЬ ВСЕХ ОСТОЛЬНЫХ Б0ТОВ
+
+СДЕЛАТЬ ХОТЯ БЫ ДВА ЗАДАНИЯ В БЛЕНДЕРЕ
+
+
+def get_keyboard_inline_3():
+    keyboard_inline3 = InlineKeyboardMarkup(row_width=1)
+    buttonC0 = InlineKeyboardButton('Назад',callback_data='goC0')
+    buttonB1 = InlineKeyboardButton('Показать лису⋆˚🐾˖°', callback_data='goB1')
+    buttonB2 = InlineKeyboardButton('Показать лису⋆˚🐾˖°', callback_data='goB2')
+    buttonB3 = InlineKeyboardButton('Показать лису⋆˚🐾˖°', callback_data='goB3')
+    buttonB4 = InlineKeyboardButton('Показать лису⋆˚🐾˖°', callback_data='goB4')
+    buttonB5 = InlineKeyboardButton('Показать лису⋆˚🐾˖°', callback_data='goB5')
+    buttonB6 = InlineKeyboardButton('Показать лису⋆˚🐾˖°', callback_data='goB6')
+    buttonB7 = InlineKeyboardButton('Показать лису⋆˚🐾˖°', callback_data='goB7')
+    buttonB8 = InlineKeyboardButton('Показать лису⋆˚🐾˖°', callback_data='goB8')
+    keyboard_inline3.add(buttonC0, buttonB1, buttonB2)
+    return keyboard_inline3
+
+
+def get_keyboard_inline_4():
+    keyboard_inline4 = InlineKeyboardMarkup(row_width=1)
+    buttonA1 = InlineKeyboardButton('БЕНГАЛЬСКАЯ ЛИСА🦊🐾',callback_data='goA1')
+    buttonA2 = InlineKeyboardButton('АФГАНСКАЯ ЛИСА🦊🐾', callback_data='goA2')
+    buttonA3 = InlineKeyboardButton('ЮЖНОАФРИКАНСКАЯ ЛИСА🦊🐾', callback_data='goA3')
+    buttonA4 = InlineKeyboardButton('КОРСАК🦊🐾', callback_data='goA4')
+    buttonA5 = InlineKeyboardButton('ТИБЕТСКАЯ ЛИСА🦊🐾', callback_data='goA5')
+    buttonA6 = InlineKeyboardButton('ПЕСЕЦ🦊🐾', callback_data='goA6')
+    buttonA7 = InlineKeyboardButton('АМЕРИКАНСКАЯ ЛИСА🦊🐾', callback_data='goA7')
+    buttonA8 = InlineKeyboardButton('АФРИКАНСКАЯ ЛИСА🦊🐾', callback_data='goA8')
+    keyboard_inline4.add(buttonA8, buttonA7, buttonA6, buttonA5, buttonA4, buttonA3, buttonA2, buttonA1)
+    return keyboard_inline4
